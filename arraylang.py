@@ -103,6 +103,12 @@ def interprete(what, array=array_normal, position=0):
             # Others
             if letter == "C":
                 os.system("clear")
+            
+            # File IO
+            if letter == "I":
+                print("ye")
+            if letter == "O":
+                print("ye")
         
         # Modes
         elif mode == "if":
