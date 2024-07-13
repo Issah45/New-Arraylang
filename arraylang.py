@@ -106,9 +106,7 @@ def interprete(what, array=array_normal, position=0):
             
             # File IO
             if letter == "I":
-                print("ye")
-            if letter == "O":
-                print("ye")
+                mode = "filein"
         
         # Modes
         elif mode == "if":
@@ -153,5 +151,16 @@ def interprete(what, array=array_normal, position=0):
             n = variables[letter]
             array[position] = n
             mode = "code"
+        
+        elif mode == "filein":
+            q = ""
+            if letter == "I":
+                mode = "filein2"
+            else:
+                q += letter
+        
+        elif mode == "filein2":
+            print(q)
+
 
 interprete(code)
