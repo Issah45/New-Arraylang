@@ -3,7 +3,7 @@ import sys, os
 f = sys.argv[1]
 code = open(f, "r").read()
 
-array_normal = [0, 0, 0, 0]
+array_normal = [0, 0, 0, 0, 0, 0, 0, 0]
 variables = {}
 
 def interprete(what, array=array_normal, position=0):
