@@ -29,3 +29,4 @@ In *New* Arraylang, data is stored on a 16-bit 1 dimensional-stack (although it 
 `C` clears the screen\
 `N` prints out a new line\
 `"` prints out a string e.g. `"Hello"` would print out Hello\
+`G` uses Tkinter to show an alert e.g. `GhelloG` would make an alert saying hello\

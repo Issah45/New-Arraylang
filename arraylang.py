@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, tkinter
 
 f = sys.argv[1]
 code = open(f, "r").read()
@@ -103,6 +103,11 @@ def interprete(what, array=array_normal, position=0):
             # Others
             if letter == "C":
                 os.system("clear")
+            
+            # Graphics
+            if letter == "G":
+                mode = "alert"
+                q = ""
         
         # Modes
         elif mode == "if":
@@ -147,5 +152,15 @@ def interprete(what, array=array_normal, position=0):
             n = variables[letter]
             array[position] = n
             mode = "code"
+        
+        elif mode == "alert":
+            if letter == "G":
+                r = tkinter.Tk()
+                txt = tkinter.Label(r, text=q)
+                txt.pack()
+                r.mainloop()
+                mode = "code"
+            else:
+                q += letter
 
 interprete(code)
