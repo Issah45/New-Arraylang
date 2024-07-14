@@ -108,10 +108,6 @@ def interprete(what, array=array_normal, position=0):
             if letter == "I":
                 mode = "filein"
                 q = ""
-            
-            # Graphics
-            if letter == "G":
-                mode = "alert"
         
         # Modes
         elif mode == "if":
