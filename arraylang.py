@@ -109,6 +109,12 @@ def interprete(what, array=array_normal, position=0):
                 mode = "alert"
                 q = ""
         
+            
+            # File IO
+            if letter == "I":
+                mode = "filein"
+                q = ""
+        
         # Modes
         elif mode == "if":
             if array[position + 1] == int(letter):
@@ -162,5 +168,23 @@ def interprete(what, array=array_normal, position=0):
                 mode = "code"
             else:
                 q += letter
+        
+        elif mode == "filein":
+            if letter == "I":
+                m = open(q).read()
+                initp = position
+                osition = 0
+                for char in m:
+                    try:
+                        array[initp + osition] = char
+                    except:
+                        array.append(0)
+                        array[initp + osition] = char
+                    osition += 1
+
+                mode = "code"
+            else:
+                q += letter
+
 
 interprete(code)
