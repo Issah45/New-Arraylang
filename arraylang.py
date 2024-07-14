@@ -108,6 +108,10 @@ def interprete(what, array=array_normal, position=0):
             if letter == "I":
                 mode = "filein"
                 q = ""
+            
+            # Graphics
+            if letter == "G":
+                mode = "alert"
         
         # Modes
         elif mode == "if":
@@ -155,7 +159,17 @@ def interprete(what, array=array_normal, position=0):
         
         elif mode == "filein":
             if letter == "I":
-                print(q)
+                m = open(q).read()
+                initp = position
+                osition = 0
+                for char in m:
+                    try:
+                        array[initp + osition] = char
+                    except:
+                        array.append(0)
+                        array[initp + osition] = char
+                    osition += 1
+
                 mode = "code"
             else:
                 q += letter
